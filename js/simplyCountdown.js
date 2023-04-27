@@ -115,10 +115,10 @@
      */
     simplyCountdown = function (elt, args) {
         var parameters = extend({
-                year: 2015,
-                month: 6,
-                day: 28,
-                hours: 0,
+                year: 2023,
+                month: 7,
+                day: 11,
+                hours: 9,
                 minutes: 0,
                 seconds: 0,
                 words: {
@@ -153,27 +153,29 @@
             seconds,
             cd = document.querySelectorAll(elt);
 
-        targetTmpDate = new Date(
-            parameters.year,
-            parameters.month - 1,
-            parameters.day,
-            parameters.hours,
-            parameters.minutes,
-            parameters.seconds
-        );
+        // targetTmpDate = new Date(
+        //     parameters.year,
+        //     parameters.month - 1,
+        //     parameters.day,
+        //     parameters.hours,
+        //     parameters.minutes,
+        //     parameters.seconds
+        // );
 
-        if (parameters.enableUtc) {
-            targetDate = new Date(
-                targetTmpDate.getUTCFullYear(),
-                targetTmpDate.getUTCMonth(),
-                targetTmpDate.getUTCDate(),
-                targetTmpDate.getUTCHours(),
-                targetTmpDate.getUTCMinutes(),
-                targetTmpDate.getUTCSeconds()
-            );
-        } else {
-            targetDate = targetTmpDate;
-        }
+        // if (parameters.enableUtc) {
+        //     targetDate = new Date(
+        //         targetTmpDate.getUTCFullYear(),
+        //         targetTmpDate.getUTCMonth(),
+        //         targetTmpDate.getUTCDate(),
+        //         targetTmpDate.getUTCHours(),
+        //         targetTmpDate.getUTCMinutes(),
+        //         targetTmpDate.getUTCSeconds()
+        //     );
+        // } else {
+        //     targetDate = targetTmpDate;
+        // }
+
+        targetDate = new Date("Jul 11, 2023 09:00:00");
 
         Array.prototype.forEach.call(cd, function (countdown) {
             var fullCountDown = createElements(parameters, countdown),
